@@ -1,0 +1,22 @@
+# docker-compose.dev.yml (NEW - Place in project root)
+version: '3.8'
+services:
+  backend:
+    # Override: Mount local code for live updates
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    command: npm run dev # Use nodemon for auto-restart
+
+  frontend:
+    # Override: Mount local code for live updates
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    ports:
+      - "3000:3000" # Map to React dev server port
+    command: npm start # Use React dev server

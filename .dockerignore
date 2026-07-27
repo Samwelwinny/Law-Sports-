@@ -1,0 +1,20 @@
+# frontend/.dockerignore
+node_modules
+npm-debug.log
+Dockerfile
+.dockerignore
+.git
+.gitignore
+.env
+.env.local
+.env*.local
+coverage
+logs
+*.pid
+*.seed
+*.pem
+*.log
+tests
+.vscode
+.idea
+*.md
